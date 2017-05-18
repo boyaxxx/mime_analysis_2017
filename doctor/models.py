@@ -23,3 +23,12 @@ class LoginStatistics(models.Model):
     login_year = models.IntegerField()
     login_month = models.IntegerField()
     login_day = models.IntegerField()
+
+
+class AuthorizeStatistics(models.Model):
+    doctor = models.ForeignKey(Doctor)
+    login_year = models.IntegerField()
+    login_month = models.IntegerField()
+    login_day = models.IntegerField()
+
+
