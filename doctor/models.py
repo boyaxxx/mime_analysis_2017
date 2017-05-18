@@ -2,6 +2,9 @@ from django.db import models
 
 
 # Create your models here.
+class AgeGroup(models.Model):
+    pass
+
 class Doctor(models.Model):
     phone = models.CharField(max_length=11, unique=True)
     age = models.CharField()
@@ -30,5 +33,4 @@ class AuthorizeStatistics(models.Model):
     login_year = models.IntegerField()
     login_month = models.IntegerField()
     login_day = models.IntegerField()
-
 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'doctor',
     'page',
     'class',
+    'personal',
     'live',
 ]
 
