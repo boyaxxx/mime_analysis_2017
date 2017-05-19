@@ -34,10 +34,13 @@ class Doctor(models.Model):
     city = models.CharField()
     longitude = models.DecimalField(12, 6)
     latitude = models.DecimalField(12, 6)
+    if_authorized = models.BooleanField(default=False)
     register_year = models.CharField()
     register_month = models.CharField()
     register_day = models.CharField()
-    register_time = models.DateTimeField()
+    authorize_year = models.CharField(null=True)
+    authorize_month = models.CharField(null=True)
+    authorize_day = models.CharField(null=True)
 
 
 class AgeRangeStatistics(models.Model):
@@ -78,3 +81,9 @@ class DoctorTitleStatistics(models.Model):
 
     doctor_title = models.ForeignKey(DoctorTitle)
     count = models.IntegerField(default=0)
+
+
+
+
+
+
