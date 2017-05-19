@@ -21,8 +21,8 @@ class RegionStatistics(models.Model):
     province = models.CharField()
     city = models.CharField()
 
-    longitude = models.DecimalField(20, 12)
-    latitude = models.DecimalField(20, 12)
+    longitude = models.DecimalField(12, 6)
+    latitude = models.DecimalField(12, 6)
 
 
 class DailyStatistics(models.Model):
