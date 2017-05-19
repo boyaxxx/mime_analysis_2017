@@ -9,7 +9,6 @@ class TotalStatistics(models.Model):
 
     order_count = models.IntegerField(default=0)
     turnover_count = models.IntegerField(default=0)
-
     live_count = models.IntegerField(default=0)
     group_count = models.IntegerField(default=0)
 
@@ -17,10 +16,8 @@ class TotalStatistics(models.Model):
 class RegionStatistics(models.Model):
     register_count = models.IntegerField(default=0)
     authorize_count = models.IntegerField(default=0)
-
     province = models.CharField()
     city = models.CharField()
-
     longitude = models.DecimalField(12, 6)
     latitude = models.DecimalField(12, 6)
 
