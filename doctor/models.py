@@ -64,6 +64,7 @@ class HospitalLevelStatistics(models.Model):
     count = models.IntegerField(default=0)
     authorized_count = models.IntegerField(default=0)
 
+
 class HospitalOfficeStatistics(models.Model):
     year = models.IntegerField()
     month = models.IntegerField()
@@ -73,6 +74,7 @@ class HospitalOfficeStatistics(models.Model):
     hospital_office = models.ForeignKey(HospitalOffice)
     count = models.IntegerField(default=0)
     authorized_count = models.IntegerField(default=0)
+
 
 class DoctorTitleStatistics(models.Model):
     year = models.IntegerField()
