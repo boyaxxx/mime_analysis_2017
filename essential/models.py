@@ -5,11 +5,25 @@ from django.db import models
 class TotalStatistics(models.Model):
     visit_count = models.IntegerField(default=0)
     register_count = models.IntegerField(default=0)
-    login_count = models.IntegerField(default=0)
     authorize_count = models.IntegerField(default=0)
+
     order_count = models.IntegerField(default=0)
     turnover_count = models.IntegerField(default=0)
+
     live_count = models.IntegerField(default=0)
+    group_count = models.IntegerField(default=0)
+
+
+class RegionStatistics(models.Model):
+    register_count = models.IntegerField(default=0)
+    authorize_count = models.IntegerField(default=0)
+
+    province = models.CharField()
+    city = models.CharField()
+
+    longitude = models.DecimalField(20, 12)
+    latitude = models.DecimalField(20, 12)
+
 
 class DailyStatistics(models.Model):
     year = models.IntegerField()
@@ -18,6 +32,12 @@ class DailyStatistics(models.Model):
 
     visit_count = models.IntegerField(default=0)
     register_count = models.IntegerField(default=0)
-    login_count = models.IntegerField(default=0)
     authorize_count = models.IntegerField(default=0)
+    login_count = models.IntegerField(default=0)
+
+    order_count = models.IntegerField(default=0)
+    turnover_count = models.IntegerField(default=0)
+
+    live_count = models.IntegerField(default=0)
+    group_count = models.IntegerField(default=0)
 
