@@ -86,3 +86,16 @@ class DoctorTitleStatistics(models.Model):
     count = models.IntegerField(default=0)
     authorized_count = models.IntegerField(default=0)
 
+
+class DiseaseStatistics(models.Model):
+    year = models.IntegerField()
+    month = models.IntegerField()
+    day = models.IntegerField()
+    province = models.CharField()
+
+    dm_count = models.IntegerField(default=0)
+    gout_count = models.IntegerField(default=0)
+    thyroid_count = models.IntegerField(default=0)
+    bone_metabolic_count = models.IntegerField(default=0)
+    others_count = models.IntegerField(default=0)
+
