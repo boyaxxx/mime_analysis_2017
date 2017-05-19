@@ -7,7 +7,9 @@ class TotalStatistics(models.Model):
     register_count = models.IntegerField(default=0)
     login_count = models.IntegerField(default=0)
     authorize_count = models.IntegerField(default=0)
-
+    order_count = models.IntegerField(default=0)
+    turnover_count = models.IntegerField(default=0)
+    live_count = models.IntegerField(default=0)
 
 class DailyStatistics(models.Model):
     year = models.IntegerField()
