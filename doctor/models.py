@@ -51,6 +51,7 @@ class AgeRangeStatistics(models.Model):
 
     age_range = models.ForeignKey(AgeRange)
     count = models.IntegerField(default=0)
+    authorized_count = models.IntegerField(default=0)
 
 
 class HospitalLevelStatistics(models.Model):
@@ -61,7 +62,7 @@ class HospitalLevelStatistics(models.Model):
 
     hospital_level = models.ForeignKey(HospitalLevel)
     count = models.IntegerField(default=0)
-
+    authorized_count = models.IntegerField(default=0)
 
 class HospitalOfficeStatistics(models.Model):
     year = models.IntegerField()
@@ -71,7 +72,7 @@ class HospitalOfficeStatistics(models.Model):
 
     hospital_office = models.ForeignKey(HospitalOffice)
     count = models.IntegerField(default=0)
-
+    authorized_count = models.IntegerField(default=0)
 
 class DoctorTitleStatistics(models.Model):
     year = models.IntegerField()
@@ -81,9 +82,5 @@ class DoctorTitleStatistics(models.Model):
 
     doctor_title = models.ForeignKey(DoctorTitle)
     count = models.IntegerField(default=0)
-
-
-
-
-
+    authorized_count = models.IntegerField(default=0)
 
