@@ -7,32 +7,46 @@ class AgeRange(models.Model):
     range_description = models.CharField()
 
 
+class HospitalLevel(models.Model):
+    level = models.CharField()
+    level_description = models.CharField()
+
+
+class HospitalOffice(models.Model):
+    office = models.CharField()
+    office_description = models.CharField()
+
+
+class DoctorTitle(models.Model):
+    title = models.CharField()
+    title_description = models.CharField()
+
+
 class Doctor(models.Model):
+    name = models.CharField()
+    real_name = models.CharField(null=True)
     phone = models.CharField(max_length=11, unique=True)
-    province = models.CharField()
-    city = models.CharField()
     age_range = models.ForeignKey(AgeRange)
-    hospital_level = models.CharField()
-    hospital_office = models.CharField()
+    doctor_title = models.ForeignKey(DoctorTitle)
+    hospital_level = models.ForeignKey(HospitalLevel)
+    hospital_office = models.ForeignKey(HospitalOffice)
 
 
-class RegisterStatistics(models.Model):
-    doctor = models.ForeignKey(Doctor)
-    register_year = models.IntegerField()
-    register_month = models.IntegerField()
-    register_day = models.IntegerField()
+class AgeRangeTotalStatistics(models.Model):
+    age_range = models.ForeignKey(AgeRange)
+    count = models.IntegerField(default=0)
 
 
-class LoginStatistics(models.Model):
-    doctor = models.ForeignKey(Doctor)
-    login_year = models.IntegerField()
-    login_month = models.IntegerField()
-    login_day = models.IntegerField()
+class HospitalLevelTotalStatistics(models.Model):
+    hospital_level = models.ForeignKey(HospitalLevel)
+    count = models.IntegerField(default=0)
 
 
-class AuthorizeStatistics(models.Model):
-    doctor = models.ForeignKey(Doctor)
-    authorize_year = models.IntegerField()
-    authorize_month = models.IntegerField()
-    authorize_day = models.IntegerField()
+class HospitalOfficeTotalStatistics(models.Model):
+    hospital_office = models.ForeignKey(HospitalOffice)
+    count = models.IntegerField(default=0)
 
+
+class DoctorTitleTotalStatistics(models.Model):
+    doctor_title = models.ForeignKey(DoctorTitle)
+    count = models.IntegerField(default=0)
