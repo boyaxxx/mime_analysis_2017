@@ -15,7 +15,7 @@ class DailyStatistics(models.Model):
     turnover_count = models.IntegerField(default=0)
 
 
-class DailyRegionStatistics(models.Model):
+class RegionStatistics(models.Model):
     year = models.IntegerField()
     month = models.IntegerField()
     day = models.IntegerField()
