@@ -40,57 +40,41 @@ class Doctor(models.Model):
     register_time = models.DateTimeField()
 
 
-class AgeRangeTotalStatistics(models.Model):
+class AgeRangeStatistics(models.Model):
+    year = models.IntegerField()
+    month = models.IntegerField()
+    day = models.IntegerField()
+    province = models.CharField()
+
     age_range = models.ForeignKey(AgeRange)
     count = models.IntegerField(default=0)
 
 
-class AgeRangeDailyStatistics(models.Model):
+class HospitalLevelStatistics(models.Model):
     year = models.IntegerField()
     month = models.IntegerField()
     day = models.IntegerField()
-
-    age_range = models.ForeignKey(AgeRange)
-    count = models.IntegerField(default=0)
-
-
-class HospitalLevelTotalStatistics(models.Model):
-    hospital_level = models.ForeignKey(HospitalLevel)
-    count = models.IntegerField(default=0)
-
-
-class HospitalLevelDailyStatistics(models.Model):
-    year = models.IntegerField()
-    month = models.IntegerField()
-    day = models.IntegerField()
+    province = models.CharField()
 
     hospital_level = models.ForeignKey(HospitalLevel)
     count = models.IntegerField(default=0)
 
 
-class HospitalOfficeTotalStatistics(models.Model):
+class HospitalOfficeStatistics(models.Model):
+    year = models.IntegerField()
+    month = models.IntegerField()
+    day = models.IntegerField()
+    province = models.CharField()
+
     hospital_office = models.ForeignKey(HospitalOffice)
     count = models.IntegerField(default=0)
 
 
-class HospitalOfficeDailyStatistics(models.Model):
+class DoctorTitleStatistics(models.Model):
     year = models.IntegerField()
     month = models.IntegerField()
     day = models.IntegerField()
-
-    hospital_office = models.ForeignKey(HospitalOffice)
-    count = models.IntegerField(default=0)
-
-
-class DoctorTitleTotalStatistics(models.Model):
-    doctor_title = models.ForeignKey(DoctorTitle)
-    count = models.IntegerField(default=0)
-
-
-class DoctorTitleDailyStatistics(models.Model):
-    year = models.IntegerField()
-    month = models.IntegerField()
-    day = models.IntegerField()
+    province = models.CharField()
 
     doctor_title = models.ForeignKey(DoctorTitle)
     count = models.IntegerField(default=0)
